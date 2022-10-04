@@ -19,11 +19,10 @@ def loop(pos, color, count, x, y):
         myScreenshot = pyautogui.screenshot()
         myScreenshot.save(f'./screenshotsauto/file{count}.png')
         count += 1
-        print(f'wykryty kolor: {ImageGrab.grab().getpixel(pos)}')
         while ImageGrab.grab().getpixel(pos) != color:
-            time.sleep(1)
             print('kolor tła')
-        print('kolor przycisku') 
+            time.sleep(5)
+        print('kolor przycisku')
         pyautogui.click(x, y, clicks=2)
         print('kliknalem')
 
